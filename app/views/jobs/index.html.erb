@@ -1,0 +1,11 @@
+<h1>Look For Jobs</h1>
+<p> -----------------------------------------</p>
+<% @jobs.each do |job| %>
+  <div class="job">
+    <h2><%= link_to job.title, job.url %></h2>
+    <p style="margin-top: -20px;"><%= job.company %></p>
+  </div>
+  <p> -----------------------------------------</p>
+<% end %>
+<p><%= paginate @jobs %></p>
+<p><%= link_to "Add a job", new_job_path %></p>
